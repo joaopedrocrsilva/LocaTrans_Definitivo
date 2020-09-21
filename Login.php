@@ -37,22 +37,10 @@ header("Content-type:text/html; charset=utf8");
 
         <form method="post" action="#" id="login_forms">
 
-            <div class="form-group"> 
-            <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Código"/>
-            </div>
-            
-            <div class="form-group">
-            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" />
-            </div>
-    
-            <div class="form-group">
-            <input type="password" class="form-control red" id="senha" name="senha" placeholder="Senha" />
-            </div>
-
-
-            <div align = "center">
-            <a href="#" class="btn btn-info" role="button">Entrar</a>
-            </div>
+        <div align = "center">
+        <a href="Login_proprietario.php" class="btn btn-info" role="button">Proprietario</a>
+        <a href="Login_motorista.php" class="btn btn-info" role="button">Motorista</a>
+        </div>
 
         </form>
 

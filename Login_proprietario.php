@@ -47,7 +47,7 @@ header("Content-type:text/html; charset=utf8");
 
 
             <div align = "center">
-            <a href="#" class="btn btn-outline-primary">Entrar</a>
+            <a href="#" class="btn btn-info" role="button">Entrar</a>
             </div>
 
         </form>
