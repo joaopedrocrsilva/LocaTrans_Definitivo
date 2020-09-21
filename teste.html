@@ -1,0 +1,50 @@
+
+
+
+
+
+
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#avaliar">Avaliar</button>
+                            
+<div class="modal fade" id="avaliar" role="dialog">
+
+    <div class="modal-dialog">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Avaliação Motorista </h4>
+        </div>
+
+        <div class="modal-body">
+            <form action="/action_page.php" class="was-validated">
+
+                <div class="form-group">
+                  <label for="codigo_motorista">Código:</label>
+                  <input type="text" class="form-control" id="codigo_motorist" placeholder="Digite o Código" name="codigo_motorista" required>
+                  <div class="valid-feedback">Validar.</div>
+                  <div class="invalid-feedback">Por Favor preencha esse campo.</div>
+                </div>
+          
+                <div class="form-group">
+                  <label for="avaliacao">Nota:</label>
+                  <input type="number" class="form-control" id="avaliacao" placeholder="Digite a nota do motorista de 0-5" name="avaliacao" required>
+                  <div class="valid-feedback">Validar.</div>
+                  <div class="invalid-feedback">Por Favor preencha esse campo.</div>
+                </div>
+          
+                <button type="submit" class="btn btn-primary">Submit</button>
+          
+              </form>
+        </div>
+
+        <div class ="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+    </div>  
+
+    </div>
+
+</div>

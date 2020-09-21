@@ -1,0 +1,46 @@
+body{
+    background-color: rgba(0, 187, 56, 0.801);
+}
+
+.borda {
+    border: 2px solid rgba(255, 255, 255, 0.828);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.828);
+  }
+  
+  
+.botao{
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.foto{
+    border: 2px solid rgba(255, 255, 255, 0.828);
+    border-radius: 8px;
+    
+}
+.texto{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.texto_titulo{
+    font-size: 50px;
+    text-align: center;
+    font-family: Serif;
+}
+
+.texto_sobre{
+    text-align: center;
+}
+
+.texto_avaliacao{
+    text-align: center;
+}
+
+.borda_titulos{
+    border: 5px solid rgb(160, 157, 157);
+    border-radius: 10px;
+}
+
+
