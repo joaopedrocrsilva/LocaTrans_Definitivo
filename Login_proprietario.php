@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html; charset=utf8");
+	$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +35,8 @@ header("Content-type:text/html; charset=utf8");
         <img src="imagens/logo-locatrans.png" alt="" width="200px" height="200px" >
         </div>
 
-        <form method="post" action="#" id="login_forms">
+        
+        <form method="post" action="validar_acesso.php" id="formLogin">
 
             <div class="form-group">
             <input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" />
@@ -45,13 +46,23 @@ header("Content-type:text/html; charset=utf8");
             <input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
             </div>
 
+            <div class="form-group">
+            <input type="text" class="form-control red" id="campo_cargo" name="cargo" placeholder="Cargo" />
+            </div>
+
 
             <div align = "center">
-            <a href="#" class="btn btn-success" role="button">Entrar</a>
+            <button type="buttom" class="btn btn-sucess" id="btn_login">Entrar</button>
             </div>
 
         </form>
 
+        <?php
+            if($erro == 1){
+                echo '<font color="#FF0000">Usuário e ou senha inválido(s)</font>';
+                    }
+        ?>
+        
     </div>
 </div>
 <!-- Fim LOGIN -->
@@ -62,3 +73,9 @@ header("Content-type:text/html; charset=utf8");
 
 </body>
 </html>
+
+
+
+
+
+
