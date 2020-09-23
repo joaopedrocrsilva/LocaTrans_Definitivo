@@ -88,7 +88,7 @@ header("Content-type:text/html; charset=utf8");
             </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cadastro_usuario.php">
+          <a class="nav-link" href="cadastro_usuario.html">
             <span data-feather="shopping-cart"></span>
             Cadastro Usuario
           </a>
