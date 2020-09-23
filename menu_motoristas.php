@@ -89,13 +89,13 @@ if(isset($_GET["codigo"])){
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cadastro_motorista.php">
-              <span data-feather="shopping-cart"></span>
+              <span data-feather="file"></span>
               Cadastro Motoristas
             </a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="cadastro_usuario.html">
-                <span data-feather="shopping-cart"></span>
+                <span data-feather="file"></span>
                 Cadastro Usuario
               </a>
             </li>
