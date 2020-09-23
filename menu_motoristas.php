@@ -1,3 +1,14 @@
+<?php
+header("Content-type:text/html; charset=utf8");
+require_once "Funcionario.php";
+$funcionario = new Funcionario();
+$listaFuncionario = $funcionario->listarTodos();
+if(isset($_GET["codigo"])){
+    $funcionario->excluir($_GET["codigo"]);
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -82,6 +93,12 @@
               Cadastro Motoristas
             </a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="cadastro_usuario.php">
+                <span data-feather="shopping-cart"></span>
+                Cadastro Usuario
+              </a>
+            </li>
         </ul>
       </div>
     </nav>
@@ -93,6 +110,83 @@
     </main>
   </div>
 </div>
+
+
+
+
+
+
+
+<div class="container lista">
+    <div class="row">
+        <div class="col-md-10">
+            <h3>Frota</h3>
+        </div>
+    </div>
+    <div style="overflow-x:auto;">
+        <table class="table table-active" style="border-radius: 10px">
+            <thead>
+                 <tr>
+                    <th>Codigo</th>
+                    <th>Nome</th>
+                    <th>Habilitação</th>
+                    <th>Chassi</th>
+                    <th>Localização</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+<!--            Listar os alunos vindo do banco de dados-->
+                <?php if($listaFuncionario) :
+                     foreach ($listaFuncionario as $funcionario) : ?>
+                        <tr>
+                        <td><?php echo $funcionario->codigo; ?></td>
+                        <td><?php echo $funcionario->nome; ?></td>
+                        <td><?php echo $funcionario->habilitacao; ?></td>
+                        <td><?php echo $funcionario->chassi; ?></td>
+                        <td><?php echo $funcionario->localizacao; ?></td>
+                        <td><?php echo $funcionario->status; ?></td>
+                        <td>
+                            <a href="alterar_funcionario.php?codigo=<?php echo $funcionario->codigo; ?>" class="btn btn-outline-success"><img src="img/edit.png"></a>
+                            <a href="index_proprietario.php?codigo=<?php echo $funcionario->codigo; ?>" class="btn btn-outline-danger"><img src="img/delete.png"></a>
+                        </td>
+                    </tr>
+            <?php endforeach; ?>
+            <?php else: ?>
+            <tr>
+                <td colspan="6">Nenhum Funcionario Efetuou o Cadastro.</td>
+            </tr>
+            <?php endif; ?>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
