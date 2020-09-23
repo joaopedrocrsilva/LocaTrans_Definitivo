@@ -76,19 +76,19 @@ if(isset($_GET["codigo"])){
         <ul class="nav flex-column">
 
           <li class="nav-item">
-            <a class="nav-link" href="menu_proprietario.html">
+            <a class="nav-link" href="menu_proprietario.php">
               <span data-feather="home"></span>
               Dashboard <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="menu_motoristas.html">
+            <a class="nav-link active" href="menu_motoristas.php">
               <span data-feather="file"></span>
               Menu Motoristas
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cadastro_motorista.html">
+            <a class="nav-link" href="cadastro_motorista.php">
               <span data-feather="shopping-cart"></span>
               Cadastro Motoristas
             </a>

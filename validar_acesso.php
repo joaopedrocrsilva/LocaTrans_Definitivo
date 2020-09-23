@@ -19,7 +19,7 @@
 
         if(isset($dados_usuario['usuario']) && $cargo == 'proprietario' ){
 
-            header('Location: menu_proprietario.html?erro=1');
+            header('Location: menu_proprietario.php?erro=1');
 
         }
         else if (isset($dados_usuario['usuario']) && $cargo == 'funcionario' ){

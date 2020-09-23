@@ -1,3 +1,7 @@
+<?php
+header("Content-type:text/html; charset=utf8");
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -63,47 +67,41 @@
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" href="menu_proprietario.html">
-              <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
+
+        <li class="nav-item">
+            <a class="nav-link" href="menu_proprietario.php">
+                <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
             </a>
-          </li>
+            </li>
           <li class="nav-item">
             <a class="nav-link" href="menu_motoristas.php">
               <span data-feather="file"></span>
               Menu Motoristas
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="cadastro_motorista.html">
-              <span data-feather="shopping-cart"></span>
-              Cadastro Motoristas
-            </a>
-            <li class="nav-item">
-              <a class="nav-link" href="cadastro_usuario.php">
+            <a class="nav-link active" href="cadastro_motorista.php">
                 <span data-feather="shopping-cart"></span>
-                Cadastro Usuario
-              </a>
-            </li>
-          </li>
+                  Cadastro Motoristas
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cadastro_usuario.php">
+            <span data-feather="shopping-cart"></span>
+            Cadastro Usuario
+          </a>
+        </li>
+
         </ul>
       </div>
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
-        </div>
+        <h1 class="h2">Cadastro Motorista</h1>
       </div>
-
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
     </main>
   </div>
 </div>

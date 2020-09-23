@@ -70,7 +70,7 @@ header("Content-type:text/html; charset=utf8");
         <ul class="nav flex-column">
 
         <li class="nav-item">
-            <a class="nav-link" href="menu_proprietario.html">
+            <a class="nav-link" href="menu_proprietario.php">
                 <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(current)</span>
             </a>
@@ -83,7 +83,7 @@ header("Content-type:text/html; charset=utf8");
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="cadastro_motorista.html">
+            <a class="nav-link" href="cadastro_motorista.php">
                 <span data-feather="shopping-cart"></span>
                   Cadastro Motoristas
             </a>
@@ -116,18 +116,18 @@ header("Content-type:text/html; charset=utf8");
         </div>
 
         
-        <form method="post" action="cadastro_user.php" id="formLogin">
+        <form method="post" action="cadastro_user.php" id="formCadastrarse">
 
             <div class="form-group">
-            <input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" />
+            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" />
             </div>
     
             <div class="form-group">
-            <input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
+            <input type="password" class="form-control red" id="senha" name="senha" placeholder="Senha" />
             </div>
 
             <div class="form-group">
-            <input type="text" class="form-control red" id="campo_cargo" name="cargo" placeholder="Cargo" />
+            <input type="text" class="form-control red" id="cargo" name="cargo" placeholder="Cargo" />
             </div>
 
 
@@ -139,7 +139,6 @@ header("Content-type:text/html; charset=utf8");
 
     </div>
 </div>
-
 
 
 
