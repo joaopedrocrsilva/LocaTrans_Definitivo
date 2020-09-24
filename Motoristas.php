@@ -1,7 +1,7 @@
 <?php
 
 require_once "db.class.php";
-class Funcionario
+class Motoristas
 {
 
     //atributos

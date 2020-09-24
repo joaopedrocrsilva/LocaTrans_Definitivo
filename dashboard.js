@@ -12,23 +12,17 @@
     type: 'line',
     data: {
       labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
+        'Normal',
+        'Assalto',
+        'Problemas Mecanicos',
+        'Acidente'
       ],
       datasets: [{
         data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
+          200,
+          5,
+          50,
+          4
         ],
         lineTension: 0,
         backgroundColor: 'transparent',
