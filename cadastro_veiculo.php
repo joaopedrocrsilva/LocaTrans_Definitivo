@@ -1,3 +1,13 @@
+<?php
+header("Content-type:text/html; charset=utf8");
+require_once "Funcionario.php";
+$funcionario = new Funcionario();
+$listaFuncionario = $funcionario->listarTodos();
+if(isset($_GET["codigo"])){
+    $funcionario->excluir($_GET["codigo"]);
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -63,56 +73,110 @@
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" href="menu_proprietario.php">
-              <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
+
+        <li class="nav-item">
+            <a class="nav-link" href="menu_proprietario.php">
+                <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
             </a>
-          </li>
+            </li>
           <li class="nav-item">
             <a class="nav-link" href="menu_motoristas.php">
               <span data-feather="file"></span>
               Menu Motoristas
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="cadastro_veiculo.php">
-              <span data-feather="file"></span>
-              Cadastro Veiculo
+            <a class="nav-link active" href="cadastro_veiculo.php">
+                <span data-feather="file"></span>
+                  Cadastro Veiculo
             </a>
-            </li>
-            <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="cadastro_rastreador.php">
               <span data-feather="file"></span>
               Cadastro Rastreador
             </a>
             </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cadastro_usuario.html">
+            <span data-feather="file"></span>
+            Cadastro Usuario
+          </a>
+        </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="cadastro_usuario.html">
-                <span data-feather="file"></span>
-                Cadastro Usuario
-              </a>
-            </li>
-          
         </ul>
       </div>
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
-        </div>
+        <h1 class="h2">Cadastro Veiculo</h1>
       </div>
-
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
     </main>
+
+
+    <div class="container lista">
+            <div align="center">
+                <img src="imagens/logo-locatrans.png" alt="Logo" widght="200" height="200">
+            </div>
+        <div class="row">
+        <div class="col-lg-12">
+            <form action="cadastrar_veiculo.php" method="post">
+                    <div class="row">
+                        <div class="form-group col-lg-12">
+                            <label for="chassi">Chassi</label>
+                            <input type="text" name="chassi" class="form-control" >
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="modelo">Modelo </label>
+                            <input type="text" name="modelo" class="form-control" >
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="marca">Marca</label>
+                            <input type="text" name="marca" class="form-control" >
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="ano">Ano</label>
+                            <input type="text" name="ano" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label for="status">Status</label>
+                            <select  name="status" class="form-control" >
+                                <option value="Normal">Normal</option>
+                                <option value="Assalto">Assalto</option>
+                                <option value="Problema Mecanico">Problema Mecanico</option>
+                                <option value="Acidente">Acidente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <button class="btn btn-success" type="submit" name="Salvar">Salvar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

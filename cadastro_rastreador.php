@@ -1,5 +1,11 @@
 <?php
 header("Content-type:text/html; charset=utf8");
+require_once "Funcionario.php";
+$funcionario = new Funcionario();
+$listaFuncionario = $funcionario->listarTodos();
+if(isset($_GET["codigo"])){
+    $funcionario->excluir($_GET["codigo"]);
+}
 ?>
 
 <!doctype html>
@@ -82,11 +88,17 @@ header("Content-type:text/html; charset=utf8");
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="cadastro_motorista.php">
+            <a class="nav-link" href="cadastro_veiculo.php">
                 <span data-feather="file"></span>
-                  Cadastro Motoristas
+                  Cadastro Veiculo
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="cadastro_rastreador.php">
+              <span data-feather="file"></span>
+              Cadastro Rastreador
+            </a>
+            </li>
         <li class="nav-item">
           <a class="nav-link" href="cadastro_usuario.html">
             <span data-feather="file"></span>
@@ -100,9 +112,54 @@ header("Content-type:text/html; charset=utf8");
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Cadastro Motorista</h1>
+        <h1 class="h2">Cadastro Rastreador</h1>
       </div>
     </main>
+
+
+    <div class="container lista">
+            <div align="center">
+                <img src="imagens/logo-locatrans.png" alt="Logo" widght="200" height="200">
+            </div>
+        <div class="row">
+        <div class="col-lg-12">
+            <form action="cadastrar_veiculo.php" method="post">
+                    <div class="row">
+                        <div class="form-group col-lg-12">
+                            <label for="codigo">Codigo</label>
+                            <input type="text" name="codigo" class="form-control" >
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="localizacao">Localizacao</label>
+                            <input type="text" name="localizacao" class="form-control" >
+                        </div>
+                    </div>
+                    <div align="center">
+                        <button class="btn btn-success" type="submit" name="Salvar">Salvar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -8,7 +8,7 @@
 
     $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha' AND cargo = '$cargo'";
 
-    $objDb = new Conexao();
+    $objDb = new ConexaoBD();
     $link = $objDb->conecta_mysql();
 
     $resultado_id = mysqli_query($link, $sql);

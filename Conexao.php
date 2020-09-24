@@ -1,6 +1,6 @@
 <?php
 
-    class Conexao {
+    class ConexaoBD {
 
         //host
         private $host = 'localhost';

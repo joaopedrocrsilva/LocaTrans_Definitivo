@@ -21,7 +21,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/">
     <link rel="stylesheet" href="js/">
-    <link rel="stylesheet" href="style.css">
+
 </head>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -81,11 +81,17 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="cadastro_motorista.php">
+            <a class="nav-link" href="cadastro_veiculo.php">
                 <span data-feather="file"></span>
-                  Cadastro Motoristas
+                  Cadastro Veiculo
             </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cadastro_rastreador.php">
+            <span data-feather="file"></span>
+            Cadastro Rastreador
+          </a>
+          </li>
         <li class="nav-item">
           <a class="nav-link active" href="cadastro_usuario.html">
             <span data-feather="file"></span>
@@ -106,37 +112,6 @@
 </div>
 
 
-<div class="tudo">
-    <div class="login">
-
-        <div align="center">
-        <img src="imagens/logo-locatrans.png" alt="" width="200px" height="200px" >
-        </div>
-
-        
-        <form method="post" action="cadastro_user.php" id="formCadastrarse">
-
-            <div class="form-group">
-            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" />
-            </div>
-    
-            <div class="form-group">
-            <input type="password" class="form-control red" id="senha" name="senha" placeholder="Senha" />
-            </div>
-
-            <div class="form-group">
-            <input type="text" class="form-control red" id="cargo" name="cargo" placeholder="Cargo" />
-            </div>
-
-
-            <div align = "center">
-            <button type="buttom" class="btn btn-sucess" id="btn_login">Cadastrar</button>
-            </div>
-
-        </form>
-
-    </div>
-</div>
 
 
 
@@ -146,3 +121,50 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="dashboard.js"></script></body>
 </html>
+
+
+
+
+
+
+
+
+
+
+<div class="container lista">
+  <div align="center">
+      <img src="imagens/logo-locatrans.png" alt="Logo" widght="200" height="200">
+  </div>
+<div class="row">
+<div class="col-lg-12">
+  <form action="cadastro_user.php" id="formCadastrar" method="post">
+          <div class="row">
+              <div class="form-group col-lg-12">
+                  <label for="nome">Nome</label>
+                  <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" >
+              </div>
+              <div class="form-group col-lg-12">
+                  <label for="senha">Senha </label>
+                  <input type="password" class="form-control red" id="senha" name="senha" placeholder="Senha" >
+              </div>
+              <div class="form-group col-lg-3">
+                  <label for="cargo">Cargo</label>
+                  <select  id="cargo" name="cargo" placeholder="Cargo" class="form-control" >
+                      <option value="proprietario">Proprietario</option>
+                      <option value="funcionario">Funcionario</option>
+                  </select>
+              </div>
+          </div>
+            <div align="center">
+              <button class="btn btn-success" type="submit" id="btn_login">Salvar</button>
+          </div>
+  </form>
+</div>
+</div>
+</div>
+
+
+
+
+
+

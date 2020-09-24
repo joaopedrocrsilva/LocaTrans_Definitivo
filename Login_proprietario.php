@@ -39,21 +39,29 @@
         <form method="post" action="validar_acesso.php" id="formLogin">
 
             <div class="form-group">
+            <label for="usuario">Usuario</label>
             <input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" />
             </div>
     
             <div class="form-group">
+            <label for="senha">Senha</label>
             <input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
             </div>
 
-            <div class="form-group">
-            <input type="text" class="form-control red" id="campo_cargo" name="cargo" placeholder="Cargo" />
-            </div>
 
+            <div class="form-group">
+                  <label for="cargo">Cargo</label>
+                  <select  id="campo_cargo" name="cargo" placeholder="Cargo" class="form-control" >
+                      <option value="proprietario">Proprietario</option>
+                      <option value="funcionario">Funcionario</option>
+                  </select>
+              </div>
 
             <div align = "center">
             <button type="buttom" class="btn btn-sucess" id="btn_login">Entrar</button>
             </div>
+
+
 
         </form>
 
@@ -73,8 +81,6 @@
 
 </body>
 </html>
-
-
 
 
 
