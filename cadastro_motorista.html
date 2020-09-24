@@ -1,12 +1,4 @@
-<?php
-header("Content-type:text/html; charset=utf8");
-require_once "Funcionario.php";
-$funcionario = new Funcionario();
-$listaFuncionario = $funcionario->listarTodos();
-if(isset($_GET["codigo"])){
-    $funcionario->excluir($_GET["codigo"]);
-}
-?>
+
 
 <!doctype html>
 <html lang="en">
@@ -88,17 +80,23 @@ if(isset($_GET["codigo"])){
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="cadastro_veiculo.php">
+            <a class="nav-link" href="cadastro_veiculo.html">
                 <span data-feather="file"></span>
                   Cadastro Veiculo
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="cadastro_rastreador.php">
+            <a class="nav-link" href="cadastro_rastreador.html">
               <span data-feather="file"></span>
               Cadastro Rastreador
             </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="cadastro_motorista.html">
+                  <span data-feather="file"></span>
+                  Cadastro Motorista
+                </a>
+                </li>
         <li class="nav-item">
           <a class="nav-link" href="cadastro_usuario.html">
             <span data-feather="file"></span>
@@ -112,7 +110,7 @@ if(isset($_GET["codigo"])){
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Cadastro Veiculo</h1>
+        <h1 class="h2">Cadastro Motorista</h1>
       </div>
     </main>
 
@@ -123,32 +121,23 @@ if(isset($_GET["codigo"])){
             </div>
         <div class="row">
         <div class="col-lg-12">
-            <form action="cadastrar_veiculo.php" method="post">
+            <form action="cadastrar_motorista.php" method="post">
                     <div class="row">
                         <div class="form-group col-lg-12">
-                            <label for="chassi">Chassi</label>
-                            <input type="text" name="chassi" class="form-control" >
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" class="form-control" >
                         </div>
                         <div class="form-group col-lg-12">
-                            <label for="modelo">Modelo </label>
-                            <input type="text" name="modelo" class="form-control" >
+                            <label for="habilitacao">Habilitacao</label>
+                            <input type="text" name="habilitacao" class="form-control" >
                         </div>
                         <div class="form-group col-lg-12">
-                            <label for="marca">Marca</label>
-                            <input type="text" name="marca" class="form-control" >
+                            <label for="veiculo_chassi">Veiculo Chassi</label>
+                            <input type="text" name="veiculo_chassi" class="form-control" >
                         </div>
                         <div class="form-group col-lg-12">
-                            <label for="ano">Ano</label>
-                            <input type="text" name="ano" class="form-control">
-                        </div>
-                        <div class="form-group col-lg-3">
-                            <label for="status">Status</label>
-                            <select  name="status" class="form-control" >
-                                <option value="Normal">Normal</option>
-                                <option value="Assalto">Assalto</option>
-                                <option value="Problema Mecanico">Problema Mecanico</option>
-                                <option value="Acidente">Acidente</option>
-                            </select>
+                            <label for="rastreador_codigo">Rastreador Codigo</label>
+                            <input type="text" name="rastreador_codigo" class="form-control" >
                         </div>
                     </div>
                     <div align="center">
