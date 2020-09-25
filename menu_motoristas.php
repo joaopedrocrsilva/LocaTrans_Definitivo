@@ -1,10 +1,10 @@
 <?php
 header("Content-type:text/html; charset=utf8");
-require_once "Funcionario.php";
-$funcionario = new Funcionario();
-$listaFuncionario = $funcionario->listarTodos();
+require_once "Motorista.php";
+$motorista = new Motorista();
+$listaMotorista = $motorista->listarTodos();
 if(isset($_GET["codigo"])){
-    $funcionario->excluir($_GET["codigo"]);
+    $motorista->excluir($_GET["codigo"]);
 }
 ?>
 
@@ -143,25 +143,23 @@ if(isset($_GET["codigo"])){
                     <th>Nome</th>
                     <th>Habilitação</th>
                     <th>Chassi</th>
-                    <th>Localização</th>
-                    <th>Status</th>
+                    <th>Rastreador</th>
                 </tr>
             </thead>
 
             <tbody>
 <!--            Listar os alunos vindo do banco de dados-->
-                <?php if($listaFuncionario) :
-                     foreach ($listaFuncionario as $funcionario) : ?>
+                <?php if($listaMotorista) :
+                     foreach ($listaMotorista as $motorista) : ?>
                         <tr>
-                        <td><?php echo $funcionario->codigo; ?></td>
-                        <td><?php echo $funcionario->nome; ?></td>
-                        <td><?php echo $funcionario->habilitacao; ?></td>
-                        <td><?php echo $funcionario->chassi; ?></td>
-                        <td><?php echo $funcionario->localizacao; ?></td>
-                        <td><?php echo $funcionario->status; ?></td>
+                        <td><?php echo $motorista->codigo; ?></td>
+                        <td><?php echo $motorista->nome; ?></td>
+                        <td><?php echo $motorista->habilitacao; ?></td>
+                        <td><?php echo $motorista->veiculo_chassi; ?></td>
+                        <td><?php echo $motorista->rastreador_codigo; ?></td>
                         <td>
-                            <a href="alterar_funcionario.php?codigo=<?php echo $funcionario->codigo; ?>" class="btn btn-outline-success"><img src="img/edit.png"></a>
-                            <a href="index_proprietario.php?codigo=<?php echo $funcionario->codigo; ?>" class="btn btn-outline-danger"><img src="img/delete.png"></a>
+                            <a href="alterar_motorista.php?codigo=<?php echo $motorista->codigo; ?>" class="btn btn-outline-success"><img src="imagens/edit.png"></a>
+                            <a href="menu_motoristas.php?codigo=<?php echo $motorista->codigo; ?>" class="btn btn-outline-danger"><img src="imagens/delete.png"></a>
                         </td>
                     </tr>
             <?php endforeach; ?>

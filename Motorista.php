@@ -1,16 +1,15 @@
 <?php
 
 require_once "db.class.php";
-class Motoristas
+class Motorista
 {
 
     //atributos
     public $codigo;
     public $nome;
-    public $numero_onibus;
     public $habilitacao;
-    public $localizacao;
-    public $status;
+    public $veiculo_chassi;
+    public $rastreador_codigo;
 
 
     //metodos
@@ -19,7 +18,7 @@ class Motoristas
         try {
             $bd = new db();
             $con = $bd->conectar();
-            $sql = $con->prepare("select * from funcionario");
+            $sql = $con->prepare("select * from motorista");
             $sql->execute();
             if ($sql->rowCount() > 0) {
                 return $result = $sql->fetchAll(PDO::FETCH_CLASS);
@@ -31,12 +30,12 @@ class Motoristas
 
 // Descobrir como listar apenas o que foi adiconado 
 
-    public function listarFuncionario()
+    public function listarMotorista()
     {
         try {
             $bd = new db();
             $con = $bd->conectar();
-            $sql = $con->prepare("select * from funcionario ");
+            $sql = $con->prepare("select * from motorista ");
             $sql->execute();
             if ($sql->rowCount() > 0) {
                 return $result = $sql->fetchAll(PDO::FETCH_CLASS);
@@ -50,29 +49,27 @@ class Motoristas
     public function inserir()
     {
         try {
-            if (isset($_POST['nome']) && isset($_POST['numero_onibus'])) {
+            if (isset($_POST['nome']) && isset($_POST['habilitacao'])) {
                 $this->nome = $_POST["nome"];
-                $this->numero_onibus = $_POST["numero_onibus"];
                 $this->habilitacao = $_POST["habilitacao"];
-                $this->localizacao = $_POST["localizacao"];
-                $this->status = $_POST["status"];
+                $this->veiculo_chassi = $_POST["veiculo_chassi"];
+                $this->rastreador_codigo = $_POST["rastreador_codigo"];
 
                 $bd = new db();
                 $con = $bd->conectar();
-                $sql = $con->prepare("insert into funcionario(codigo,nome,numero_onibus,habilitacao,localizacao,status)
-                                  values (null,?,?,?,?,?)");
+                $sql = $con->prepare("insert into motorista(codigo,nome,habilitacao,veiculo_chassi,rastreador_codigo)
+                                  values (null,?,?,?,?)");
                 $sql->execute(array(
                     $this->nome,
-                    $this->numero_onibus,
                     $this->habilitacao,
-                    $this->localizacao,
-                    $this->status,
+                    $this->veiculo_chassi,
+                    $this->rastreador_codigo,
                 ));
                 if ($sql->rowCount() > 0) {
-                    header("location:index_funcionario.php");
+                    header("location:menu_motorista.php");
                 }
             } else {
-                header("location:index_funcionario.php");
+                header("location:menu_motorista.php");
             }
         } catch (PDOException $msg) {
             echo "Não foi possivel inserir Funcionario: " . $msg->getMessage();
@@ -87,13 +84,13 @@ class Motoristas
                 $this->codigo = $codigo;
                 $bd = new db();
                 $con = $bd->conectar();
-                $sql = $con->prepare("delete from funcionario where codigo = ?");
+                $sql = $con->prepare("delete from motorista where codigo = ?");
                 $sql->execute(array($this->codigo));
                 if ($sql->rowCount() > 0) {
-                    header("location:index_proprietario.php");
+                    header("location:menu_motorista.php");
                 }
             } else {
-                header("location:index_proprietario.php");
+                header("location:menu_motorista.php");
 
             }
         } catch
@@ -108,27 +105,24 @@ class Motoristas
         try {
             if (isset($_POST['Salvar'])) {
                 $this->codigo = $_GET ["codigo"];
-                $this->nome = $_POST ["nome"];
-                $this->numero_onibus = $_POST ["numero_onibus"];
-                $this->habilitacao = $_POST ["habilitacao"];
-                $this->localizacao = $_POST ["localizacao"];
-                $this->status = $_POST ["status"];
+                $this->nome = $_POST["nome"];
+                $this->habilitacao = $_POST["habilitacao"];
+                $this->veiculo_chassi = $_POST["veiculo_chassi"];
+                $this->rastreador_codigo = $_POST["rastreador_codigo"];
                 $bd = new db();
                 $con = $bd->conectar();
-                $sql = $con->prepare("update funcionario set nome=?,numero_onibus=?,habilitacao=?,localizacao=?,status=? where codigo=?");
+                $sql = $con->prepare("update motorista set nome=?,habilitacao=?,veiculo_chassi=?,rastreador_codigo=? where codigo=?");
                 $sql->execute(array(
                     $this->nome,
-                    $this->numero_onibus,
                     $this->habilitacao,
-                    $this->localizacao,
-                    $this->status,
-                    $this->codigo,
+                    $this->veiculo_chassi,
+                    $this->rastreador_codigo,
                 ));
                 if ($sql->rowCount() > 0) {
-                    header("location: index_proprietario.php");
+                    header("location: menu_motorista.php");
                 }
             } else {
-                header("location: index_proprietario.php");
+                header("location: menu_motorista.php");
             }
         } catch
         (PDOException $msg) {
@@ -142,7 +136,7 @@ class Motoristas
                 $this->codigo = $codigo;
                 $bd = new db();
                 $con = $bd->conectar();
-                $sql = $con->prepare("select * from funcionario where codigo = ?");
+                $sql = $con->prepare("select * from motorista where codigo = ?");
                 $sql->execute(array($this->codigo));
                 if ($sql->rowCount() > 0) {
                     return $result = $sql->fetchObject();
