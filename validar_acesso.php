@@ -24,7 +24,7 @@
         }
         else if (isset($dados_usuario['usuario']) && $cargo == 'funcionario' ){
             
-            echo 'funcionario';
+            header('Location: menu_funcionario.php?erro=1');
 
         }
         else{

@@ -88,6 +88,18 @@ if(isset($_GET["codigo"])){
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="menu_veiculo.php">
+              <span data-feather="file"></span>
+              Menu Veiculo
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu_rastreador.php">
+              <span data-feather="file"></span>
+              Menu Rastreador
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="cadastro_veiculo.html">
               <span data-feather="file"></span>
               Cadastro Veiculo

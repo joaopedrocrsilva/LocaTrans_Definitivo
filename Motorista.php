@@ -66,10 +66,10 @@ class Motorista
                     $this->rastreador_codigo,
                 ));
                 if ($sql->rowCount() > 0) {
-                    header("location:menu_motorista.php");
+                    header("location:menu_motoristas.php");
                 }
             } else {
-                header("location:menu_motorista.php");
+                header("location:menu_motoristas.php");
             }
         } catch (PDOException $msg) {
             echo "Não foi possivel inserir Funcionario: " . $msg->getMessage();
@@ -87,10 +87,10 @@ class Motorista
                 $sql = $con->prepare("delete from motorista where codigo = ?");
                 $sql->execute(array($this->codigo));
                 if ($sql->rowCount() > 0) {
-                    header("location:menu_motorista.php");
+                    header("location:menu_motoristas.php");
                 }
             } else {
-                header("location:menu_motorista.php");
+                header("location:menu_motoristas.php");
 
             }
         } catch
@@ -119,10 +119,10 @@ class Motorista
                     $this->rastreador_codigo,
                 ));
                 if ($sql->rowCount() > 0) {
-                    header("location: menu_motorista.php");
+                    header("location: menu_motoristas.php");
                 }
             } else {
-                header("location: menu_motorista.php");
+                header("location: menu_motoristas.php");
             }
         } catch
         (PDOException $msg) {
