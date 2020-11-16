@@ -1,7 +1,7 @@
 <?php
 
 require_once "db.class.php";
-class Veiculo
+class Veiculo2
 {
 
     //atributos
@@ -71,10 +71,10 @@ class Veiculo
                     $this->status,
                 ));
                 if ($sql->rowCount() > 0) {
-                    header("location:menu_veiculo.php");
+                    header("location:menu_veiculo2.php");
                 }
             } else {
-                header("location:menu_veiculo.php");
+                header("location:menu_veiculo2.php");
             }
         } catch (PDOException $msg) {
             echo "Não foi possivel inserir Veiculo: " . $msg->getMessage();
@@ -92,10 +92,10 @@ class Veiculo
                 $sql = $con->prepare("delete from veiculo where chassi = ? ");
                 $sql->execute(array($this->chassi));
                 if ($sql->rowCount() > 0) {
-                    header("location:menu_veiculo.php");
+                    header("location:menu_veiculo2.php");
                 }
             } else {
-                header("location:menu_veiculo.php");
+                header("location:menu_veiculo2.php");
 
             }
         } catch
@@ -127,10 +127,10 @@ class Veiculo
                     $this->status,
                 ));
                 if ($sql->rowCount() > 0) {
-                    header("location: menu_veiculo.php");
+                    header("location: menu_veiculo2.php");
                 }
             } else {
-                header("location: menu_veiculo.php");
+                header("location: menu_veiculo2.php");
             }
         } catch
         (PDOException $msg) {

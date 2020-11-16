@@ -64,31 +64,19 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="menu_motoristas.php">
+            <a class="nav-link active" href="menu_motoristas2.php">
               <span data-feather="file"></span>
               Menu Motoristas
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="menu_veiculo.php">
+            <a class="nav-link" href="menu_veiculo2.php">
               <span data-feather="file"></span>
               Menu Veiculo
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cadastro_veiculo.html">
-              <span data-feather="file"></span>
-              Cadastro Veiculo
-            </a>
-            </li>
             <li class="nav-item">
-            <a class="nav-link" href="cadastro_rastreador.html">
-              <span data-feather="file"></span>
-              Cadastro Rastreador
-            </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="cadastro_motorista.html">
+                <a class="nav-link " href="cadastro_motorista2.html">
                   <span data-feather="file"></span>
                   Cadastro Motorista
                 </a>
